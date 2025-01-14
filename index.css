@@ -19,6 +19,9 @@ body {
 
 /*letter*/
 
+a{
+  text-decoration: none;
+}
 
   .wrapper {
     margin-top: 20px !important;
