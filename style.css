@@ -1,0 +1,243 @@
+/* CSS Reset */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Twinkle+Star&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Twinkle+Star&display=swap');
+* {
+    transition: 1s ease-in-out;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: "Twinkle Star", sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #F5EFFF;
+}
+
+/* homepage Css */
+
+header {
+    text-align: center;
+    padding-top: 20px;
+    margin: auto;
+}
+
+.text-container {
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 3px 3px 7px rgb(66, 66, 66);
+    background-color: #ffffff;
+    padding: 18px;
+    margin: 40px 0;
+    height: fit-content;
+    width:  380px;
+    font-family: "Economica", serif;
+    p{
+        font-weight: 300;
+        font-size: 1.5rem;
+    }
+}
+
+#note{
+    margin: auto;
+}
+
+.image-container {
+    margin: 40px;
+    height: auto;
+    width: fit-content;
+    font-family: "Economica", serif;
+    img {
+        border-radius: 12px;
+        height: auto;
+        width: 400px;
+        box-shadow: 3px 3px 7px rgb(66, 66, 66);
+    }
+}
+
+.watermark{
+    background-color: #ffffff;
+    padding: 18px;
+    margin: 40px auto;
+    margin-bottom: 40px;
+    height: auto;
+    width: fit-content;
+    font-family: "Economica", serif;
+}
+
+.grid{
+    display: flex;
+    row-gap: 10px;
+    justify-content: center;
+}
+
+.wrapper{
+    margin: auto;
+    width: 60%;
+    padding: 48px !important;
+}
+
+iframe{
+    margin: auto;
+    width: 33%;
+}
+
+
+.section-headings{
+    text-align: center;
+    margin: 0  auto;
+}
+
+.sides{
+    width: 100%;
+}
+
+.song{
+    width: 100%;
+    display: flex;
+    margin: 40px 0;
+    iframe{
+        width: 40%;
+        margin: 0%;
+    }
+    .song-details{
+        height: auto;
+        width: 60%;
+        padding: 18px;
+        margin: 0%;
+        margin-left: 20px;
+    }
+}
+
+.button {
+    margin-top: 20px auto;
+    width: fit-content;
+    height: fit-content;
+    padding: 18px;
+    background-color: #CDC1FF;
+    border-radius: 12px;
+    border: #A294F9 solid 1px;
+    cursor: pointer; /* Default cursor for buttons */
+}
+
+.button:hover {
+    background-color: #f6f5ff;
+    color: rgb(0, 0, 0);
+    border-color: #CDC1FF;
+    cursor: pointer; /* Explicitly set pointer cursor */
+}
+
+.section-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.photoframes {
+    font-family: "Economica", serif;
+    position: relative;
+    text-align: center;
+    width: 70%;
+    height: 100%;
+    margin: 40px auto;
+    overflow: hidden; /* Ensures description stays within bounds */
+}
+
+.photoframes img {
+    width: 100%;
+    height: auto;
+    display: block;
+    backface-visibility: hidden; /* Improves rotation appearance */
+    transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+.photoframes:hover img {
+    opacity: 0; /* Hide the image during animation */
+}
+
+.description {
+    position: absolute; /* Positioned over the image */
+    display: flex;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #EFB6C8;
+    transform: rotateY(180deg); /* Start flipped */
+    backface-visibility: hidden; /* Prevent backface from showing */
+    transition: transform 0.5s ease-in-out; /* Smooth rotation */
+    z-index: 1; /* Bring to front */
+}
+
+.description h1 {
+    margin: auto;
+    padding: 100px;
+    font-size: 2rem;
+}
+
+.photoframes:hover .description {
+    transform: rotateY(0); /* Flip to reveal the description */
+}
+
+.photoframes {
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 0.6s ease-in-out;
+}
+
+.photoframes .flip-visible {
+    transform: perspective(1000px) rotateY(180deg);
+}
+
+
+/* Translucent background */
+#voucher-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+/* Voucher container */
+#voucher-container {
+    position: fixed;
+    margin: auto;
+    top: 20%;
+    left: 17%;
+    height: auto;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+/* Voucher styling */
+.voucher {
+    z-index: 1002;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: fit-content;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
